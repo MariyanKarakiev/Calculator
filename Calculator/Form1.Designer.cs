@@ -60,6 +60,7 @@ namespace Calculator
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbMemory = new System.Windows.Forms.ComboBox();
             this.txtEntry = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnComma
@@ -342,7 +343,7 @@ namespace Calculator
             this.btn0.TabIndex = 21;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
-            this.btn0.Click += new System.EventHandler(this.button4_Click);
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
             // btnRoot
             // 
@@ -468,16 +469,18 @@ namespace Calculator
             // 
             // cbMemory
             // 
+            this.cbMemory.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuPopup;
             this.cbMemory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.cbMemory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMemory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbMemory.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbMemory.ForeColor = System.Drawing.Color.White;
             this.cbMemory.FormattingEnabled = true;
+            this.cbMemory.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.cbMemory.Location = new System.Drawing.Point(327, 123);
             this.cbMemory.Name = "cbMemory";
             this.cbMemory.Size = new System.Drawing.Size(99, 34);
             this.cbMemory.TabIndex = 32;
-            this.cbMemory.Text = "     M";
             this.cbMemory.SelectedIndexChanged += new System.EventHandler(this.cbMemory_SelectedIndexChanged);
             // 
             // txtEntry
@@ -494,12 +497,25 @@ namespace Calculator
             this.txtEntry.Text = "0";
             this.txtEntry.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(359, 129);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 23);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "M";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(438, 548);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEntry);
             this.Controls.Add(this.cbMemory);
             this.Controls.Add(this.textBox1);
@@ -572,6 +588,7 @@ namespace Calculator
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox cbMemory;
         private System.Windows.Forms.TextBox txtEntry;
+        private System.Windows.Forms.Label label1;
     }
 }
 
