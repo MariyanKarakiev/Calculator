@@ -48,7 +48,7 @@ namespace Calculator
             this.txtTo = new System.Windows.Forms.TextBox();
             this.btnSquareRoot = new System.Windows.Forms.Button();
             this.btnBackSpace = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn0 = new System.Windows.Forms.Button();
             this.btnRoot = new System.Windows.Forms.Button();
             this.btnPlusMinus = new System.Windows.Forms.Button();
             this.btnOneofX = new System.Windows.Forms.Button();
@@ -330,18 +330,19 @@ namespace Calculator
             this.btnBackSpace.UseVisualStyleBackColor = false;
             this.btnBackSpace.Click += new System.EventHandler(this.btnBackSpace_Click);
             // 
-            // button4
+            // btn0
             // 
-            this.button4.BackColor = System.Drawing.Color.Black;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(117, 479);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(99, 57);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "0";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn0.BackColor = System.Drawing.Color.Black;
+            this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn0.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn0.ForeColor = System.Drawing.Color.White;
+            this.btn0.Location = new System.Drawing.Point(117, 479);
+            this.btn0.Name = "btn0";
+            this.btn0.Size = new System.Drawing.Size(99, 57);
+            this.btn0.TabIndex = 21;
+            this.btn0.Text = "0";
+            this.btn0.UseVisualStyleBackColor = false;
+            this.btn0.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnRoot
             // 
@@ -510,7 +511,7 @@ namespace Calculator
             this.Controls.Add(this.btnOneofX);
             this.Controls.Add(this.btnPlusMinus);
             this.Controls.Add(this.btnRoot);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btn0);
             this.Controls.Add(this.btnBackSpace);
             this.Controls.Add(this.btnSquareRoot);
             this.Controls.Add(this.txtTo);
@@ -559,7 +560,7 @@ namespace Calculator
         private System.Windows.Forms.TextBox txtTo;
         private System.Windows.Forms.Button btnSquareRoot;
         private System.Windows.Forms.Button btnBackSpace;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btnRoot;
         private System.Windows.Forms.Button btnPlusMinus;
         private System.Windows.Forms.Button btnOneofX;

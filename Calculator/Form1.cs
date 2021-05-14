@@ -25,6 +25,34 @@ namespace Calculator
             InitializeComponent();
         }
 
+        private void btn0_Click(object sender, EventArgs e)
+        {
+            if (txtEntry.Text == "0")
+            {
+                txtEntry.Clear();
+            }
+
+            if (equalUsed == true)
+            {
+
+                txtEntry.Text = btn0.Text;
+                txtTo.Text = "";
+                equalUsed = false;
+            }
+
+            else if (signUsed)
+            {
+                txtEntry.Text = btn0.Text;
+            }
+
+            else
+            {
+                txtEntry.Text += btn0.Text;
+
+            }
+            signUsed = false;
+        }
+
         private void btn1_Click(object sender, EventArgs e)
         {
             if (txtEntry.Text == "0")
@@ -67,12 +95,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
-            
+
             else if (signUsed)
             {
                 txtEntry.Text = btn2.Text;
             }
-           
+
             else
             {
                 txtEntry.Text += btn2.Text;
@@ -95,12 +123,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
-           
+
             else if (signUsed)
             {
                 txtEntry.Text = btn3.Text;
             }
-            
+
             else
             {
                 txtEntry.Text += btn3.Text;
@@ -143,7 +171,7 @@ namespace Calculator
             {
                 txtEntry.Clear();
             }
-          
+
             if (equalUsed == true)
             {
 
@@ -151,12 +179,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
-           
+
             else if (signUsed)
             {
                 txtEntry.Text = btn5.Text;
             }
-           
+
             else
             {
                 txtEntry.Text += btn5.Text;
@@ -180,12 +208,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
-            
+
             else if (signUsed)
             {
                 txtEntry.Text = btn6.Text;
             }
-            
+
             else
             {
                 txtEntry.Text += btn6.Text;
@@ -208,12 +236,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
-            
+
             else if (signUsed)
             {
                 txtEntry.Text = btn7.Text;
             }
-            
+
             else
             {
                 txtEntry.Text += btn7.Text;
@@ -264,12 +292,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
-            
+
             else if (signUsed)
             {
                 txtEntry.Text = btn9.Text;
             }
-           
+
             else
             {
                 txtEntry.Text += btn9.Text;
@@ -330,8 +358,8 @@ namespace Calculator
                 signUsed = true;
                 firstN = double.Parse(txtEntry.Text);
                 sign = btnPlus.Text;
-            }         
-        }    
+            }
+        }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
@@ -354,7 +382,7 @@ namespace Calculator
 
                 firstN = double.Parse(txtEntry.Text);
                 sign = btnDivide.Text;
-            }           
+            }
         }
 
         private void btnMultiply_Click(object sender, EventArgs e)
@@ -407,7 +435,7 @@ namespace Calculator
             {
 
             }
-        }       
+        }
 
         private void btnMPlus_Click(object sender, EventArgs e)
         {
@@ -451,11 +479,11 @@ namespace Calculator
                     string entryMinus;
                     if (entry.ElementAt(0) == '+')
                     {
-                         entryMinus = entry.Replace('+', '-');  
+                        entryMinus = entry.Replace('+', '-');
                     }
                     else
                     {
-                         entryMinus = entry.Insert(0, "-");
+                        entryMinus = entry.Insert(0, "-");
                     }
                     txtEntry.Text = entryMinus;
                 }
@@ -540,5 +568,7 @@ namespace Calculator
         {
             txtEntry.Text = cbMemory.SelectedItem.ToString();
         }
+
+
     }
 }
