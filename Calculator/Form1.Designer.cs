@@ -33,7 +33,6 @@ namespace Calculator
             this.btnMultiply = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDivide = new System.Windows.Forms.Button();
-            this.txtEntry = new System.Windows.Forms.RichTextBox();
             this.btnPlus = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
@@ -52,7 +51,7 @@ namespace Calculator
             this.button4 = new System.Windows.Forms.Button();
             this.btnRoot = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnOneofX = new System.Windows.Forms.Button();
             this.btnClearEntry = new System.Windows.Forms.Button();
             this.btnPercent = new System.Windows.Forms.Button();
             this.btnMC = new System.Windows.Forms.Button();
@@ -60,6 +59,7 @@ namespace Calculator
             this.btnMR = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbMemory = new System.Windows.Forms.ComboBox();
+            this.txtEntry = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnComma
@@ -118,22 +118,6 @@ namespace Calculator
             this.btnDivide.UseVisualStyleBackColor = false;
             this.btnDivide.Click += new System.EventHandler(this.btnDivide_Click);
             // 
-            // txtEntry
-            // 
-            this.txtEntry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.txtEntry.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEntry.Font = new System.Drawing.Font("Arial Rounded MT Bold", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEntry.ForeColor = System.Drawing.Color.White;
-            this.txtEntry.Location = new System.Drawing.Point(12, 65);
-            this.txtEntry.MaxLength = 10;
-            this.txtEntry.Name = "txtEntry";
-            this.txtEntry.ReadOnly = true;
-            this.txtEntry.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtEntry.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.txtEntry.Size = new System.Drawing.Size(414, 52);
-            this.txtEntry.TabIndex = 5;
-            this.txtEntry.Text = "0";
-            // 
             // btnPlus
             // 
             this.btnPlus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -186,7 +170,7 @@ namespace Calculator
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(99, 57);
             this.btn1.TabIndex = 6;
-            this.btn1.Text = "1";
+            this.btn1.Text = "4";
             this.btn1.UseVisualStyleBackColor = false;
             this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
@@ -265,8 +249,8 @@ namespace Calculator
             this.btn9.BackColor = System.Drawing.Color.Black;
             this.btn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn9.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn9.ForeColor = System.Drawing.Color.White;
+            this.btn9.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn9.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn9.Location = new System.Drawing.Point(222, 290);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(99, 57);
@@ -299,7 +283,7 @@ namespace Calculator
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(99, 57);
             this.btn7.TabIndex = 14;
-            this.btn7.Text = "4";
+            this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
             this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
@@ -307,9 +291,9 @@ namespace Calculator
             // 
             this.txtTo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txtTo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTo.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtTo.ForeColor = System.Drawing.Color.White;
-            this.txtTo.Location = new System.Drawing.Point(200, 16);
+            this.txtTo.Location = new System.Drawing.Point(200, 24);
             this.txtTo.MaxLength = 10;
             this.txtTo.Name = "txtTo";
             this.txtTo.Size = new System.Drawing.Size(226, 27);
@@ -328,6 +312,7 @@ namespace Calculator
             this.btnSquareRoot.TabIndex = 19;
             this.btnSquareRoot.Text = "√x";
             this.btnSquareRoot.UseVisualStyleBackColor = false;
+            this.btnSquareRoot.Click += new System.EventHandler(this.btnSquareRoot_Click);
             // 
             // btnBackSpace
             // 
@@ -386,18 +371,19 @@ namespace Calculator
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // btnOneofX
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(12, 227);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(99, 57);
-            this.button7.TabIndex = 24;
-            this.button7.Text = "1/x";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnOneofX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnOneofX.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOneofX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOneofX.ForeColor = System.Drawing.Color.White;
+            this.btnOneofX.Location = new System.Drawing.Point(12, 227);
+            this.btnOneofX.Name = "btnOneofX";
+            this.btnOneofX.Size = new System.Drawing.Size(99, 57);
+            this.btnOneofX.TabIndex = 24;
+            this.btnOneofX.Text = "1/x";
+            this.btnOneofX.UseVisualStyleBackColor = false;
+            this.btnOneofX.Click += new System.EventHandler(this.button7_Click);
             // 
             // btnClearEntry
             // 
@@ -491,6 +477,21 @@ namespace Calculator
             this.cbMemory.Size = new System.Drawing.Size(99, 34);
             this.cbMemory.TabIndex = 32;
             this.cbMemory.Text = "     M";
+            this.cbMemory.SelectedIndexChanged += new System.EventHandler(this.cbMemory_SelectedIndexChanged);
+            // 
+            // txtEntry
+            // 
+            this.txtEntry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtEntry.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEntry.Font = new System.Drawing.Font("Arial Rounded MT Bold", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEntry.ForeColor = System.Drawing.Color.White;
+            this.txtEntry.Location = new System.Drawing.Point(12, 67);
+            this.txtEntry.MaxLength = 9;
+            this.txtEntry.Name = "txtEntry";
+            this.txtEntry.Size = new System.Drawing.Size(414, 50);
+            this.txtEntry.TabIndex = 33;
+            this.txtEntry.Text = "0";
+            this.txtEntry.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form1
             // 
@@ -498,6 +499,7 @@ namespace Calculator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(438, 548);
+            this.Controls.Add(this.txtEntry);
             this.Controls.Add(this.cbMemory);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnMR);
@@ -505,7 +507,7 @@ namespace Calculator
             this.Controls.Add(this.btnMC);
             this.Controls.Add(this.btnPercent);
             this.Controls.Add(this.btnClearEntry);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnOneofX);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.btnRoot);
             this.Controls.Add(this.button4);
@@ -524,7 +526,6 @@ namespace Calculator
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
-            this.Controls.Add(this.txtEntry);
             this.Controls.Add(this.btnDivide);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnMultiply);
@@ -543,7 +544,6 @@ namespace Calculator
         private System.Windows.Forms.Button btnMultiply;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDivide;
-        private System.Windows.Forms.RichTextBox txtEntry;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.Button btn3;
         private System.Windows.Forms.Button btn2;
@@ -562,7 +562,7 @@ namespace Calculator
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnRoot;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnOneofX;
         private System.Windows.Forms.Button btnClearEntry;
         private System.Windows.Forms.Button btnPercent;
         private System.Windows.Forms.Button btnMC;
@@ -570,6 +570,7 @@ namespace Calculator
         private System.Windows.Forms.Button btnMR;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox cbMemory;
+        private System.Windows.Forms.TextBox txtEntry;
     }
 }
 

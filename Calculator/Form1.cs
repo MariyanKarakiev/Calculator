@@ -39,17 +39,18 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
+
             else if (signUsed)
             {
                 txtEntry.Text = btn1.Text;
             }
+
             else
             {
                 txtEntry.Text += btn1.Text;
 
             }
             signUsed = false;
-
         }
 
         private void btn2_Click(object sender, EventArgs e)
@@ -66,10 +67,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
+            
             else if (signUsed)
             {
                 txtEntry.Text = btn2.Text;
             }
+           
             else
             {
                 txtEntry.Text += btn2.Text;
@@ -92,10 +95,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
+           
             else if (signUsed)
             {
                 txtEntry.Text = btn3.Text;
             }
+            
             else
             {
                 txtEntry.Text += btn3.Text;
@@ -118,10 +123,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
+
             else if (signUsed)
             {
                 txtEntry.Text = btn4.Text;
             }
+
             else
             {
                 txtEntry.Text += btn4.Text;
@@ -136,7 +143,7 @@ namespace Calculator
             {
                 txtEntry.Clear();
             }
-
+          
             if (equalUsed == true)
             {
 
@@ -144,10 +151,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
+           
             else if (signUsed)
             {
                 txtEntry.Text = btn5.Text;
             }
+           
             else
             {
                 txtEntry.Text += btn5.Text;
@@ -171,10 +180,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
+            
             else if (signUsed)
             {
                 txtEntry.Text = btn6.Text;
             }
+            
             else
             {
                 txtEntry.Text += btn6.Text;
@@ -197,10 +208,12 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
+            
             else if (signUsed)
             {
                 txtEntry.Text = btn7.Text;
             }
+            
             else
             {
                 txtEntry.Text += btn7.Text;
@@ -235,7 +248,6 @@ namespace Calculator
 
             }
             signUsed = false;
-
         }
 
         private void btn9_Click(object sender, EventArgs e)
@@ -252,16 +264,16 @@ namespace Calculator
                 txtTo.Text = "";
                 equalUsed = false;
             }
+            
             else if (signUsed)
             {
                 txtEntry.Text = btn9.Text;
             }
+           
             else
             {
                 txtEntry.Text += btn9.Text;
-
             }
-            signUsed = false;
         }
 
         private void btnEquals_Click(object sender, EventArgs e)
@@ -306,7 +318,6 @@ namespace Calculator
                 {
                     txtTo.Text = txtEntry.Text;
                     txtTo.Text += btnPlus.Text;
-                    signUsed = true;
                     equalUsed = false;
                 }
 
@@ -314,19 +325,13 @@ namespace Calculator
                 {
                     txtTo.Text += txtEntry.Text;
                     txtTo.Text += btnPlus.Text;
-                    signUsed = true;
                 }
 
+                signUsed = true;
                 firstN = double.Parse(txtEntry.Text);
                 sign = btnPlus.Text;
-            }
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            txtEntry.Text = "0";
-            txtTo.Text = "";
-        }
+            }         
+        }    
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
@@ -349,7 +354,7 @@ namespace Calculator
 
                 firstN = double.Parse(txtEntry.Text);
                 sign = btnDivide.Text;
-            }
+            }           
         }
 
         private void btnMultiply_Click(object sender, EventArgs e)
@@ -398,18 +403,11 @@ namespace Calculator
                 firstN = double.Parse(txtEntry.Text);
                 sign = btnMinus.Text;
             }
-        }
-        public bool ContainsAction(string entry)
-        {
-            if (entry.Contains("+") || entry.Contains("-") || entry.Contains("X") || entry.Contains("÷") || entry == "")
-            {
-                return true;
-            }
             else
             {
-                return false;
+
             }
-        }
+        }       
 
         private void btnMPlus_Click(object sender, EventArgs e)
         {
@@ -432,40 +430,63 @@ namespace Calculator
         }
 
         private void btnPercent_Click(object sender, EventArgs e)
-        {          
+        {
             double number = double.Parse(txtEntry.Text);
 
             if (txtEntry.Text.Length > 0)
             {
-                number = (double)(number / 100);
+                number = (double)(firstN * (number / 100));
                 txtEntry.Text = number.ToString();
             }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string entry = txtEntry.Text;           
-            
-            if (double.Parse(entry) > 0)
-            {               
-                txtEntry.Text += "-";
-            }
+            string entry = txtEntry.Text;
 
-            else if (double.Parse(entry) < 0)
+            if (entry.Length != 0)
             {
-                string entryPlus = entry.Remove(entry.Length - 1);
-                txtEntry.Text = entryPlus;
-            } 
+                if (double.Parse(entry) > 0)
+                {
+                    string entryMinus;
+                    if (entry.ElementAt(0) == '+')
+                    {
+                         entryMinus = entry.Replace('+', '-');  
+                    }
+                    else
+                    {
+                         entryMinus = entry.Insert(0, "-");
+                    }
+                    txtEntry.Text = entryMinus;
+                }
+
+                else if (double.Parse(entry) < 0)
+                {
+                    string entryPlus = entry.Replace('-', '+');
+                    txtEntry.Text = entryPlus;
+                }
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            firstN = 0;
+            sign = "";
+            result = 0;
+            signUsed = false;
+            equalUsed = false;
+            txtEntry.Text = "0";
+            txtTo.Text = "";
         }
 
         private void btnClearEntry_Click(object sender, EventArgs e)
-        {                 
-                txtEntry.Text = "0";          
+        {
+            txtEntry.Text = "0";
         }
 
         private void btnComma_Click(object sender, EventArgs e)
         {
-           string entry = txtEntry.Text.Insert(txtEntry.Text.Length, btnComma.Text);
+            string entry = txtEntry.Text.Insert(txtEntry.Text.Length, btnComma.Text);
             txtEntry.Text = entry;
         }
 
@@ -488,9 +509,36 @@ namespace Calculator
 
             if (txtEntry.Text.Length > 0)
             {
-                number = Math.Pow(number,2);
+                number = Math.Pow(number, 2);
                 txtEntry.Text = number.ToString();
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            double number = double.Parse(txtEntry.Text);
+
+            if (txtEntry.Text.Length > 0)
+            {
+                number = 1 / number;
+                txtEntry.Text = number.ToString();
+            }
+        }
+
+        private void btnSquareRoot_Click(object sender, EventArgs e)
+        {
+            double number = double.Parse(txtEntry.Text);
+
+            if (txtEntry.Text.Length > 0)
+            {
+                number = Math.Sqrt(number);
+                txtEntry.Text = number.ToString();
+            }
+        }
+
+        private void cbMemory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtEntry.Text = cbMemory.SelectedItem.ToString();
         }
     }
 }
