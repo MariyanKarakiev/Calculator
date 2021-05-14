@@ -50,7 +50,7 @@ namespace Calculator
             this.btnBackSpace = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnRoot = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnPlusMinus = new System.Windows.Forms.Button();
             this.btnOneofX = new System.Windows.Forms.Button();
             this.btnClearEntry = new System.Windows.Forms.Button();
             this.btnPercent = new System.Windows.Forms.Button();
@@ -357,19 +357,19 @@ namespace Calculator
             this.btnRoot.UseVisualStyleBackColor = false;
             this.btnRoot.Click += new System.EventHandler(this.btnStep_Click);
             // 
-            // button6
+            // btnPlusMinus
             // 
-            this.button6.BackColor = System.Drawing.Color.Black;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(12, 479);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(99, 57);
-            this.button6.TabIndex = 23;
-            this.button6.Text = "+/-";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnPlusMinus.BackColor = System.Drawing.Color.Black;
+            this.btnPlusMinus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPlusMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnPlusMinus.ForeColor = System.Drawing.Color.White;
+            this.btnPlusMinus.Location = new System.Drawing.Point(12, 479);
+            this.btnPlusMinus.Name = "btnPlusMinus";
+            this.btnPlusMinus.Size = new System.Drawing.Size(99, 57);
+            this.btnPlusMinus.TabIndex = 23;
+            this.btnPlusMinus.Text = "+/-";
+            this.btnPlusMinus.UseVisualStyleBackColor = false;
+            this.btnPlusMinus.Click += new System.EventHandler(this.btnPlusMinus_Click);
             // 
             // btnOneofX
             // 
@@ -383,7 +383,7 @@ namespace Calculator
             this.btnOneofX.TabIndex = 24;
             this.btnOneofX.Text = "1/x";
             this.btnOneofX.UseVisualStyleBackColor = false;
-            this.btnOneofX.Click += new System.EventHandler(this.button7_Click);
+            this.btnOneofX.Click += new System.EventHandler(this.btnOneofX_Click);
             // 
             // btnClearEntry
             // 
@@ -508,7 +508,7 @@ namespace Calculator
             this.Controls.Add(this.btnPercent);
             this.Controls.Add(this.btnClearEntry);
             this.Controls.Add(this.btnOneofX);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnPlusMinus);
             this.Controls.Add(this.btnRoot);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnBackSpace);
@@ -561,7 +561,7 @@ namespace Calculator
         private System.Windows.Forms.Button btnBackSpace;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnRoot;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnPlusMinus;
         private System.Windows.Forms.Button btnOneofX;
         private System.Windows.Forms.Button btnClearEntry;
         private System.Windows.Forms.Button btnPercent;

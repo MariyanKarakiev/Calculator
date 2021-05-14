@@ -440,7 +440,7 @@ namespace Calculator
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnPlusMinus_Click(object sender, EventArgs e)
         {
             string entry = txtEntry.Text;
 
@@ -514,7 +514,7 @@ namespace Calculator
             }
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnOneofX_Click(object sender, EventArgs e)
         {
             double number = double.Parse(txtEntry.Text);
 
